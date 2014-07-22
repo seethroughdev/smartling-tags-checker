@@ -143,4 +143,4 @@ gulp.task('deploy', [ 'build' ], function() {
 
 gulp.task('default', [ 'watch', 'test' ]);
 
-gulp.task('build', [ 'js', 'css', 'vendor', 'html', 'images', 'build:test' ]);
+gulp.task('build', [ 'js', 'css', 'vendor', 'html', 'images']);

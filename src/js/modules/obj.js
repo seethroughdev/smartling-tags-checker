@@ -4,10 +4,10 @@ var objTemplate = require('./template');
 
 var body   = document.getElementsByTagName('body')[ 0 ]
 ,   head   = document.getElementsByTagName('head')[ 0 ]
-,   cssLoc = 'https://seethroughtrees.github.io/nice-inline-copy-editor/index.css';
+,   cssLoc = 'https://seethroughtrees.github.io/smartling-tags-checker/index.css';
 
 
-var nav = {
+var obj = {
 
   init: function() {
     this.createObj();
@@ -15,9 +15,7 @@ var nav = {
 
   createObj: function() {
     var div = document.createElement('div');
-    div.setAttribute('id', 'nice-obj');
-    div.setAttribute('contenteditable', false);
-    div.setAttribute('class', 'is-min');
+    div.setAttribute('id', 'smart-obj');
     div.innerHTML = objTemplate;
     this.style(div);
   },
@@ -37,4 +35,4 @@ var nav = {
 
 };
 
-module.exports = nav;
+module.exports = obj;
