@@ -24,7 +24,7 @@ var addColors = function(e, i) {
 };
 
 var addTag = function(e, i) {
-  e.slType =
+  // find a way to get the class in common with tags.
 };
 
 var setColors = function(e) {
