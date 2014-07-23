@@ -1,6 +1,9 @@
 'use strict';
 
-var objTemplate = require('./template');
+var $           = require('domtastic/bundle/full/domtastic')
+,   _           = require('lodash')
+,   objTemplate = require('./template')
+,   getNodes    = require('./content');
 
 var body   = document.getElementsByTagName('body')[ 0 ]
 ,   head   = document.getElementsByTagName('head')[ 0 ]
@@ -23,10 +26,29 @@ function style(div) {
 
 
 function init() {
-  var div = document.createElement('div');
-  div.setAttribute('id', 'smart-obj');
-  div.innerHTML = objTemplate;
-  style(div);
+  console.log(getNodes());
+  var $container = $('<ul>');
+  $container.attr('id', 'smartling-obj');
+
+  // _.forEach(getNodes(), function(el, ind, arr) {
+  //   var $li = $(li);
+  //   $li.text()
+
+  //   $container.append($li)
+
+  // });
+
+  $('body').append($container);
+
+  // var div = document.createElement('div');
+  // div.setAttribute('id', 'smart-obj');
+  // div.innerHTML = objTemplate;
+  // style(div);
+
+  // _.forEach(getNodes, function(e, i, v) {
+  //   $('#smartling-obj')
+  // })
+
 }
 
 

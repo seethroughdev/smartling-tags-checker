@@ -19,8 +19,12 @@ var elExists = function(e) {
 };
 
 var addColors = function(e, i) {
-  e.bgColor = Colors[ i ];
+  e.bgColor = Colors.length > i ? Colors[ i ] : Colors[ i - Colors.length ];
   return e;
+};
+
+var addTag = function(e, i) {
+  e.slType =
 };
 
 var setColors = function(e) {
@@ -34,6 +38,8 @@ var setColors = function(e) {
   return e;
 };
 
+
+// return all tagged nodes on the page
 
 module.exports = function() {
   return _.chain(Tags)
