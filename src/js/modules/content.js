@@ -11,7 +11,7 @@ var getNames = function(e) {
 };
 
 var getNodes = function(tag) {
-  return $('.' + tag);
+  return $('.' + tag).attr('data-stc', tag );
 };
 
 var elExists = function(e) {
@@ -23,16 +23,10 @@ var addColors = function(e, i) {
   return e;
 };
 
-var addTag = function(e, i) {
-  // find a way to get the class in common with tags.
-};
-
 var setColors = function(e) {
-  $(e)
-    .attr('data-stc', 'true' )
-    .css({
-      background: e.bgColor,
-      color: '#000'
+  $(e).css({
+    background: e.bgColor,
+    color: '#000'
   });
 
   return e;
@@ -43,10 +37,10 @@ var setColors = function(e) {
 
 module.exports = function() {
   return _.chain(Tags)
-      .map(getNames)
-      .map(getNodes)
-      .filter(elExists)
-      .map(addColors)
-      .map(setColors)
-      .value();
+          .map(getNames)
+          .map(getNodes)
+          .filter(elExists)
+          .map(addColors)
+          .map(setColors)
+          .value();
 };
