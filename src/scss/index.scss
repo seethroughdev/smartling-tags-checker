@@ -13,80 +13,8 @@ $titleHeight: 18px;
   font-style: normal;
 }
 
-#nice-obj {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 10000;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  text-align: center;
-  overflow: hidden;
-  transition: all 200ms linear;
 
-  &.is-min {
-    width: $liSize;
-    height: $liSize + $titleHeight;
-    min-height: $liSize + $titleHeight;
-
-    #nice-min span {
-      transform: rotateX(180deg);
-      display: block;
-    }
-  }
-
-  pre {
-    text-align: left;
-    line-height: 2.5em;
-    width: auto;
-    float: left;
-    border: 5px solid lighten($bg, 3%);
-    border-radius: 5px 0 0 5px;
-    border-right: 0;
-    transition: all 200ms linear;
-    z-index: -10;
-    overflow: hidden;
-    display: none;
-    max-width: 600px;
-    max-height: 600px;
-    overflow: auto;
-    background: white;
-    white-space: pre-line;
-    font-size: 14px;
-    margin-top: 18px;
-    margin-bottom: 0;
-    span {
-      display: block;
-      white-space: wrap;
-      padding: 0 10px;
-      &:nth-child(even) {
-        background: $tertiary;
-      }
-      &.is-added {
-        &:before {
-          content: '++';
-          display: inline-block;
-          margin-right: 10px;
-        }
-      }
-      &.is-removed {
-        &:before {
-          content: '--';
-          display: inline-block;
-          margin-right: 10px;
-        }
-      }
-      &::selection {
-        background: hsla(66, 100%, 92%, 1);
-      }
-    }
-    &.is-active {
-      display: inline-block;
-    }
-  }
-}
-
-#nice-nav {
+#smartling-nav {
   float: right;
   background: $bg;
   margin: 0;
