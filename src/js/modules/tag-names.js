@@ -38,7 +38,11 @@ module.exports = [
     link: 'http://support.smartling.com/hc/en-us/articles/201059107-How-to-Process-JSON-for-Translation'
   },
   {
-    name: 'sl_all sl_none',
+    name: 'sl_all',
+    link: 'http://support.smartling.com/hc/en-us/articles/201059107-How-to-Process-JSON-for-Translation'
+  },
+  {
+    name: 'sl_none',
     link: 'http://support.smartling.com/hc/en-us/articles/201059107-How-to-Process-JSON-for-Translation'
   }
 ];

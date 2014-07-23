@@ -7,32 +7,27 @@ var body   = document.getElementsByTagName('body')[ 0 ]
 ,   cssLoc = 'https://seethroughtrees.github.io/smartling-tags-checker/index.css';
 
 
-var obj = {
+function append(div) {
+  body.appendChild(div);
+}
 
-  init: function() {
-    this.createObj();
-  },
 
-  createObj: function() {
-    var div = document.createElement('div');
-    div.setAttribute('id', 'smart-obj');
-    div.innerHTML = objTemplate;
-    this.style(div);
-  },
+function style(div) {
+  var link = document.createElement('link');
+  link.setAttribute('rel','stylesheet');
+  link.setAttribute('href', cssLoc);
+  link.setAttribute('type','text/css');
+  head.appendChild(link);
+  append(div);
+}
 
-  style: function(div) {
-    var link = document.createElement('link');
-    link.setAttribute('rel','stylesheet');
-    link.setAttribute('href', cssLoc);
-    link.setAttribute('type','text/css');
-    head.appendChild(link);
-    this.append(div);
-  },
 
-  append: function(div) {
-    body.appendChild(div);
-  }
+function init() {
+  var div = document.createElement('div');
+  div.setAttribute('id', 'smart-obj');
+  div.innerHTML = objTemplate;
+  style(div);
+}
 
-};
 
-module.exports = obj;
+module.exports = init;
