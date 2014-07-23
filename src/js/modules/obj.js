@@ -6,11 +6,11 @@ var $           = require('domtastic/bundle/full/domtastic')
 ,   getNodes    = require('./content')
 ,   Tags        = require('./tag-names');
 
-var cssLoc = 'https://seethroughtrees.github.io/smartling-tags-checker/index.css';
+var cssLoc = 'index.css';
 
 
 function addStyle() {
-  var $link = $('<li>');
+  var $link = $('<link>');
 
   $link.attr({
     rel: 'stylesheet',
@@ -34,16 +34,16 @@ function addContainer() {
 
   _.forEach(getNodes(), function(el, ind, arr) {
     var $li     = $('<li>'),
-        $a      = $('<a>'),
+        $tag    = $('<a>'),
         $link   = $('<a>'),
         $body   = $('body'),
         tagType = $(el).attr('data-stc');
 
-    $a.attr({
+    $tag.attr({
         id: tagType,
         href: '#'
       })
-      .addClass('is-active')
+      .addClass('tag-link')
       .text(tagType);
 
     $link.attr({
@@ -52,7 +52,8 @@ function addContainer() {
       .addClass('icon-link')
       .text(' - link');
 
-    $li.append($a)
+    $li.addClass('is-active')
+      .append($tag)
       .append($link);
 
     $container.append($li)
