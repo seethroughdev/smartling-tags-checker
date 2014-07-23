@@ -15,9 +15,7 @@ var gulp       = require('gulp')
 ,   csso       = require('gulp-csso')
 ,   htmlpretty = require('gulp-html-prettify')
 ,   imagemin   = require('gulp-imagemin')
-,   svgo       = require('gulp-svgo')
-,   base64     = require('gulp-base64')
-,   iconfont   = require('gulp-iconfont');
+,   base64     = require('gulp-base64');
 
 
 /*==========  CONFIG  ==========*/
@@ -29,7 +27,6 @@ var path = {
     root: './src/',
     js: './src/js/',
     css: './src/scss/',
-    svg: './src/svg/',
     images: './src/images/',
     font: './src/font/',
     html: './src/html/'
@@ -67,14 +64,6 @@ gulp.task('vendor', function() {
   return gulp.src(path.src.css + 'vendor/*.css')
     .pipe(changed(path.dist.root))
     .pipe(gulp.dest(path.dist.root));
-});
-
-gulp.task('svg', function() {
-  return gulp.src(path.src.svg + '*.svg')
-    .pipe(iconfont({
-      fontName: 'myfont'
-    }))
-    .pipe(gulp.dest(path.src.font));
 });
 
 gulp.task('images', function() {
@@ -122,7 +111,7 @@ gulp.task('watch', [
   var server = livereload();
 
   gulp.watch(path.src.js + '**', [ 'js' ]);
-  gulp.watch(path.src.images + '**', [ 'svg', 'images' ]);
+  gulp.watch(path.src.images + '**', [ 'images' ]);
   gulp.watch(path.src.css + '**', [ 'css' ]);
   gulp.watch(path.src.html + '**', [ 'html' ]);
 
