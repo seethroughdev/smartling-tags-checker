@@ -1,3 +1,35 @@
-#smartling-obj {
-  background: #333;
-  color: #f3f3f3; }
+#stc-obj {
+  position: absolute;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background: #f1f1f1;
+  color: #333;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 15px 30px;
+  border: 2px dashed #c7c7c7;
+  border-right: 0;
+  border-top: 0;
+  font-family: 'helvetica nueue', helvetica, arial, sans-serif; }
+  #stc-obj #stc-heading {
+    display: block;
+    margin-bottom: 1em; }
+  #stc-obj ul {
+    margin: 0;
+    padding: 0; }
+  #stc-obj li {
+    list-style-type: none;
+    margin-bottom: 10px; }
+  #stc-obj a {
+    color: #333;
+    text-decoration: none;
+    line-height: 30px;
+    height: 30px; }
+  #stc-obj a.swatch-link {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    margin: 0 15px 0 0; }
+  #stc-obj .is-active a {
+    font-weight: bold; }

@@ -28,15 +28,19 @@ function getTagLink(el) {
 }
 
 function addContainer() {
-  var $container = $('<ul>');
+  var $body   = $('body'),
+      $container = $('<div>'),
+      $ul        = $('<ul>');
 
-  $container.attr('id', 'smartling-obj');
+  $container
+    .attr('id', 'stc-obj')
+    .html(objTemplate);
 
   _.forEach(getNodes(), function(el, ind, arr) {
     var $li     = $('<li>'),
         $tag    = $('<a>'),
         $link   = $('<a>'),
-        $body   = $('body'),
+        $swatch = $('<a>'),
         tagType = $(el).attr('data-stc');
 
     $tag.attr({
@@ -52,14 +56,22 @@ function addContainer() {
       .addClass('icon-link')
       .text(' - link');
 
+    $swatch
+      .addClass('swatch-link')
+      .css({
+        background: el.bgColor
+      });
+
+
     $li.addClass('is-active')
+      .append($swatch)
       .append($tag)
       .append($link);
 
-    $container.append($li)
-    $body.append($container);
-
+    $ul.append($li)
   });
+    $container.append($ul);
+    $body.append($container);
 };
 
 
