@@ -1,8 +1,8 @@
 // colors
 
 module.exports = [
-  '#f1acdd',
-  '#b2acf1',
+  '#59bafe',
+  '#fe5987',
   '#f0c8c8',
   '#acc9f1',
   '#acf1e6',
@@ -11,6 +11,6 @@ module.exports = [
   '#e5e089',
   '#fad06b',
   '#fa976b',
-  '#fe5987',
-  '#59bafe'
+  '#b2acf1',
+  '#f1acdd'
 ];
