@@ -28,8 +28,9 @@ function getTagLink(el) {
 }
 
 function addContainer() {
-  var $body   = $('body'),
+  var $body      = $('body'),
       $container = $('<div>'),
+      $close     = $('<a>'),
       $ul        = $('<ul>');
 
   $container
@@ -61,7 +62,6 @@ function addContainer() {
         background: el.bgColor
       });
 
-
     $li.addClass('is-active')
       .append($swatch)
       .append($tag);
@@ -73,14 +73,23 @@ function addContainer() {
     $ul.append($li);
   });
 
-    $container.append($ul);
+    $close
+      .attr({
+        id: 'stc-close',
+        href: '#'
+      })
+      .text('- close -');
+
+    $container
+      .append($ul)
+      .append($close);
     $body.append($container);
 
     setTimeout(function() {
       $container.addClass('is-active');
     }, 500);
 
-};
+}
 
 
 function init() {
