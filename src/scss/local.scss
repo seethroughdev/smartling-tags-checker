@@ -1,28 +1,42 @@
 body{
-  background: #f3f3f3;
+  background: #fcfcfc;
+  font-weight: 200 !important;
 }
 
 header {
   text-align: center;
+  margin: 4em 0;
+  display: block;
 }
 
-.btn {
-  background-color: hsl(163, 13%, 51%);
-  border: 0;
-  &:hover {
-    background-color: darken(hsl(163, 13%, 51%), 10%);
-  }
-}
-
-.container {
+.main-container {
   max-width: 40em;
+  margin: 0 auto;
 }
 
-h3 {
-  font-weight: bold;
+.button-xlarge {
+  font-size: 2em;
 }
 
-.btn-image {
-  float: left;
-  margin: 1em 2em 2em .5em;
+.pure-button {
+  user-select: inherit !important;
+  -webkit-user-drag: inherit !important;
+}
+
+
+h1, h2, h3, h4, p {
+  font-weight: normal;
+  line-height: 1.7;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+.is-left {
+  text-align: left;
+}
+
+hr {
+  margin-bottom: 4em;
 }
