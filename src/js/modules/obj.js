@@ -16,7 +16,7 @@ function addStyle() {
     rel: 'stylesheet',
     href: cssLoc,
     type: 'text/css'
-  })
+  });
 
   $('head').append($link);
 }
@@ -24,7 +24,7 @@ function addStyle() {
 
 function getTagLink(el) {
   var tagType = $(el).attr('data-stc');
-  return _.find(Tags, {name: tagType}).link;
+  return _.find(Tags, { name: tagType }).link;
 }
 
 function addContainer() {
@@ -37,7 +37,7 @@ function addContainer() {
     .attr('id', 'stc-obj')
     .html(objTemplate);
 
-  _.forEach(getNodes(), function(el, ind, arr) {
+  _.forEach(getNodes(), function(el) {
     var $li     = $('<li>'),
         $tag    = $('<span>'),
         $link   = $('<a>'),
