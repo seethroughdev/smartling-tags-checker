@@ -53,7 +53,7 @@ function addContainer() {
     $link.attr({
         href: getTagLink(el),
         id: 'stc-link'
-      });
+      }).text('a');
 
     $swatch
       .addClass('swatch-link')
@@ -70,7 +70,7 @@ function addContainer() {
       $li.append($link);
     }
 
-    $ul.append($li)
+    $ul.append($li);
   });
 
     $container.append($ul);
