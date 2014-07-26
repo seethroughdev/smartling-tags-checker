@@ -1,6 +1,6 @@
 $liSize: 60px;
 $bg: hsla(0, 11%, 21%, 1);
-$primary: #78777A;
+$primary: #95d274;
 $secondary: #b7b7b7;
 $tertiary: #fbfbfb;
 $titleHeight: 18px;
@@ -23,13 +23,13 @@ $titleHeight: 18px;
   color: #333;
   font-family: 'helvetica nueue', helvetica, arial, sans-serif;
   transform: translateX(100%) translateZ(0);
-  transition: all 500ms ease-in;
+  transition: all 500ms ease-out;
 
   #stc-heading {
     display: block;
     text-transform: uppercase;
     font-weight: 200;
-    background: #95d274;
+    background: $primary;
     color: #fff;
     text-align: center;
     padding: 1em;
@@ -49,8 +49,9 @@ $titleHeight: 18px;
   a {
     color: #333;
     text-decoration: none;
-    line-height: 30px;
-    height: 30px;
+    &:hover {
+      color: $primary;
+    }
   }
 
   .swatch-link {
@@ -71,18 +72,16 @@ $titleHeight: 18px;
     color: #d7d7d7;
     margin-left: 10px;
     &:hover {
-      color: #444;
+      color: $primary;
     }
   }
 
   #stc-close {
     font-family: 'icons';
     text-transform: none;
-    position: absolute;
-    right: 10px;
-    top: 7px;
-    font-size: .75em;
-    color: lighten(#95d274, 25%);
+    text-align: center;
+    display: block;
+    padding: 15px;
   }
 
   &.is-active {
