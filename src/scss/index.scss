@@ -6,22 +6,26 @@ $tertiary: #fbfbfb;
 $titleHeight: 18px;
 
 #stc-obj {
+  box-sizing: border-box;
   position: absolute;
   position: fixed;
   top: 0;
   right: 0;
-  background: #f1f1f1;
+  background: #fff;
   color: #333;
-  box-sizing: border-box;
   padding: 15px 30px;
   border: 2px dashed #c7c7c7;
   border-right: 0;
   border-top: 0;
   font-family: 'helvetica nueue', helvetica, arial, sans-serif;
+  transform: translateX(100%) translateZ(0);
+  transition: all 500ms ease-in;
 
   #stc-heading {
     display: block;
     margin-bottom: 1em;
+    text-transform: uppercase;
+    font-weight: bold;
   }
 
   ul {
@@ -31,7 +35,7 @@ $titleHeight: 18px;
 
   li {
     list-style-type: none;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
   }
 
   a {
@@ -41,15 +45,30 @@ $titleHeight: 18px;
     height: 30px;
   }
 
-  a.swatch-link {
+  .swatch-link {
+    position: relative;
+    top: 8px;
     width: 30px;
     height: 30px;
     display: inline-block;
     margin: 0 15px 0 0;
   }
 
-  .is-active a {
+  .tag-link {
     font-weight: bold;
   }
 
+  &.is-active {
+    transform: translateX(0) translateZ(0);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+
+}
+
+[data-stc].is-active {
+  box-shadow: 0 0 1000px rgba(0,0,0,.1);
 }
