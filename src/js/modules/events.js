@@ -1,10 +1,9 @@
 'use strict';
 
-var $       = require('domtastic/bundle/full/domtastic');
+var $ = require('domtastic/bundle/full/domtastic');
 
 
-$('body').on('click', '#stc-obj', function(e) {
-  // e.preventDefault();
+module.exports = $('body').on('click', '#stc-obj', function(e) {
 
   var $target = $(e.target);
 
@@ -13,6 +12,7 @@ $('body').on('click', '#stc-obj', function(e) {
   }
 
   if ($target.attr('id') === 'stc-close') {
+    e.preventDefault();
     $('[data-stc]')
       .removeAttr('style')
       .removeAttr('data-stc');
@@ -20,9 +20,3 @@ $('body').on('click', '#stc-obj', function(e) {
   }
 
 });
-
-var events = function() {
-  console.log('events');
-};
-
-module.exports = events;
