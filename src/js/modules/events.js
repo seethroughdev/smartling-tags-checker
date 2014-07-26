@@ -3,15 +3,20 @@
 var $       = require('domtastic/bundle/full/domtastic');
 
 
-$('body').on('click', '#smartling-obj', function(e) {
-  e.preventDefault();
+$('body').on('click', '#stc-obj', function(e) {
+  // e.preventDefault();
 
   var $target = $(e.target);
 
   if ($target.hasClass('tag-link')) {
-    $('tag-link').removeClass('is-active');
-    $target
-      .addClass('is-active')
+    $('[data-stc="' + $target.attr('id') + '"]').toggleClass('is-active');
+  }
+
+  if ($target.attr('id') === 'st-close') {
+    $('[data-stc]')
+      .removeAttr('style')
+      .removeAttr('data-stc');
+    $('#stc-obj').removeClass('is-active');
   }
 
 });

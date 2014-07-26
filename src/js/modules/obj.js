@@ -38,9 +38,9 @@ function addContainer() {
 
   _.forEach(getNodes(), function(el, ind, arr) {
     var $li     = $('<li>'),
-        $tag    = $('<a>'),
+        $tag    = $('<span>'),
         $link   = $('<a>'),
-        $swatch = $('<a>'),
+        $swatch = $('<span>'),
         tagType = $(el).attr('data-stc');
 
     $tag.attr({
@@ -51,10 +51,9 @@ function addContainer() {
       .text(tagType);
 
     $link.attr({
-        href: getTagLink(el)
-      })
-      .addClass('icon-link')
-      .text(' - link');
+        href: getTagLink(el),
+        id: 'stc-link'
+      });
 
     $swatch
       .addClass('swatch-link')
@@ -65,13 +64,22 @@ function addContainer() {
 
     $li.addClass('is-active')
       .append($swatch)
-      .append($tag)
-      .append($link);
+      .append($tag);
+
+    if ($link.attr('href').length) {
+      $li.append($link);
+    }
 
     $ul.append($li)
   });
+
     $container.append($ul);
     $body.append($container);
+
+    setTimeout(function() {
+      $container.addClass('is-active');
+    }, 500);
+
 };
 
 

@@ -2,6 +2,10 @@
 
 module.exports = [
   {
+    name: 'notranslate',
+    link: ''
+  },
+  {
     name: 'sl_swap',
     link: ''
   },
