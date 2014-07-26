@@ -3,11 +3,11 @@
 module.exports = [
   {
     name: 'notranslate',
-    link: ''
+    link: 'http://support.smartling.com/hc/en-us/articles/201297393-How-to-Exclude-Content-from-Translation'
   },
   {
     name: 'sl_swap',
-    link: ''
+    link: 'http://www.smartling.com/blog/2012/05/10/localize-content-with-the-sl_swap-tag/'
   },
   {
     name: 'sl_hide',
