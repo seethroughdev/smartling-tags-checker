@@ -12,7 +12,7 @@ $('body').on('click', '#stc-obj', function(e) {
     $('[data-stc="' + $target.attr('id') + '"]').toggleClass('is-active');
   }
 
-  if ($target.attr('id') === 'st-close') {
+  if ($target.attr('id') === 'stc-close') {
     $('[data-stc]')
       .removeAttr('style')
       .removeAttr('data-stc');
