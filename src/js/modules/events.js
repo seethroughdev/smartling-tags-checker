@@ -3,20 +3,22 @@
 var $ = require('domtastic/bundle/full/domtastic');
 
 
-module.exports = $('body').on('click', '#stc-obj', function(e) {
+module.exports = function() {
+  $('body').on('click', '#stc-obj', function(e) {
 
-  var $target = $(e.target);
+    var $target = $(e.target);
 
-  if ($target.hasClass('tag-link')) {
-    $('[data-stc="' + $target.attr('id') + '"]').toggleClass('is-active');
-  }
+    if ($target.hasClass('tag-link')) {
+      $('[data-stc="' + $target.attr('id') + '"]').toggleClass('is-active');
+    }
 
-  if ($target.attr('id') === 'stc-close') {
-    e.preventDefault();
-    $('[data-stc]')
-      .removeAttr('style')
-      .removeAttr('data-stc');
-    $('#stc-obj').removeClass('is-active');
-  }
+    if ($target.attr('id') === 'stc-close') {
+      e.preventDefault();
+      $('[data-stc]')
+        .removeAttr('style')
+        .removeAttr('data-stc');
+      $('#stc-obj').removeClass('is-active');
+    }
 
-});
+  });
+};

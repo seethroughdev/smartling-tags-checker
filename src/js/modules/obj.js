@@ -45,8 +45,7 @@ function addContainer() {
         tagType = $(el).attr('data-stc');
 
     $tag.attr({
-        id: tagType,
-        href: '#'
+        id: tagType
       })
       .addClass('tag-link')
       .text(tagType);
