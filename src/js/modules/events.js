@@ -23,7 +23,7 @@ function showStyles($el) {
 
 
 module.exports = function() {
-  $('body').on('click', '#stc-obj', function(e) {
+  $('body').on('click touchstart', '#stc-obj', function(e) {
 
     var $target    = $(e.target),
         $stcObj    = $('#stc-obj'),
