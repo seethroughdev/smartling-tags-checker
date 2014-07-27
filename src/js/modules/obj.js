@@ -6,7 +6,7 @@ var $           = require('domtastic/bundle/full/domtastic')
 ,   getNodes    = require('./content')
 ,   Tags        = require('./tag-names');
 
-var cssLoc = 'index.css';
+var cssLoc = 'https://seethroughtrees.github.io/smartling-tags-checker/index.css';
 
 
 function addStyle() {

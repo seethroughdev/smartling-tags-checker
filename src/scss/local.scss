@@ -3,6 +3,8 @@ body{
   font-weight: 200 !important;
 }
 
+#main {}
+
 header {
   text-align: center;
   margin: 4em 0;
@@ -21,6 +23,10 @@ header {
 .pure-button {
   user-select: inherit !important;
   -webkit-user-drag: inherit !important;
+}
+
+.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {
+  background-color: #95d274;
 }
 
 
