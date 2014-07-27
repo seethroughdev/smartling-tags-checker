@@ -5,6 +5,11 @@ Please go to the [Project Page](https://seethroughtrees.github.io/smartling-tags
 
 --------------------------
 
+#### Screenshot
+
+![Smartling Tags Checker Screenshot](https://seethroughtrees.github.io/smartling-tags-checker/images/screenshot.png)
+
+
 #### Pull Requests
 
 Pull requests are happily accepted.  Please make the pull request to the **upstream** branch, and not Master.
