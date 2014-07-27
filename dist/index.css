@@ -32,12 +32,24 @@
   #stc-obj li {
     list-style-type: none;
     margin-bottom: 15px;
-    text-transform: lowercase; }
+    text-transform: lowercase;
+    opacity: 0.2;
+    -webkit-transition: opacity 300ms ease-out;
+            transition: opacity 300ms ease-out; }
+    #stc-obj li:hover {
+      opacity: 1; }
   #stc-obj a {
     color: #333;
     text-decoration: none; }
     #stc-obj a:hover {
       color: #95d274; }
+  #stc-obj .tag-link {
+    cursor: pointer;
+    color: #333;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
   #stc-obj .swatch-link {
     position: relative;
     top: 8px;
@@ -45,8 +57,8 @@
     height: 30px;
     display: inline-block;
     margin: 0 10px 0 0; }
-  #stc-obj .tag-link {
-    font-weight: bold; }
+  #stc-obj li.is-active {
+    opacity: 1; }
   #stc-obj #stc-link {
     font-family: 'icons';
     color: #d7d7d7;

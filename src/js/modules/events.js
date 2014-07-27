@@ -2,14 +2,53 @@
 
 var $ = require('domtastic/bundle/full/domtastic');
 
+function hideStyles($el) {
+  var style = $el.attr('style');
+
+  if (style.length > 0) {
+    $el.attr({
+      'data-stc-tmp': style,
+      style: ''
+    });
+  }
+}
+
+function showStyles($el) {
+  var style = $el.attr('data-stc-tmp');
+  $el.attr({
+    style: style
+  });
+}
+
 
 module.exports = function() {
   $('body').on('click', '#stc-obj', function(e) {
 
-    var $target = $(e.target);
+    var $target = $(e.target),
+        $parentLis = $('#stc-obj').find('li');
 
-    if ($target.hasClass('tag-link')) {
-      $('[data-stc="' + $target.attr('id') + '"]').toggleClass('is-active');
+    if ($target.hasClass('tag-link') && $parentLis.length > 1) {
+
+      if (!$target.hasClass('is-searching')) {
+        $('.tag-link').removeClass('is-searching');
+        $target.addClass('is-searching');
+        $parentLis.removeClass('is-active');
+        $target.parent().addClass('is-active');
+
+        $('[data-stc]').each(function(e) {
+          hideStyles($(e));
+        });
+        $('[data-stc="' + $target.attr('id') + '"]').each(function(e) {
+          showStyles($(e));
+        });
+      } else {
+        $target.removeClass('is-searching');
+        $parentLis.addClass('is-active');
+        $('[data-stc]').each(function(e) {
+          showStyles($(e));
+        });
+      }
+
     }
 
     if ($target.attr('id') === 'stc-close') {

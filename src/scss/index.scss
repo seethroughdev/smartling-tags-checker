@@ -44,6 +44,11 @@ $titleHeight: 18px;
     list-style-type: none;
     margin-bottom: 15px;
     text-transform: lowercase;
+    opacity: .2;
+    transition: opacity 300ms ease-out;
+    &:hover {
+      opacity: 1;
+    }
   }
 
   a {
@@ -52,6 +57,12 @@ $titleHeight: 18px;
     &:hover {
       color: $primary;
     }
+  }
+
+  .tag-link {
+    cursor: pointer;
+    color: #333;
+    user-select: none;
   }
 
   .swatch-link {
@@ -63,8 +74,8 @@ $titleHeight: 18px;
     margin: 0 10px 0 0;
   }
 
-  .tag-link {
-    font-weight: bold;
+  li.is-active {
+    opacity: 1;
   }
 
   #stc-link {
