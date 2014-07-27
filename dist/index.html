@@ -15,12 +15,13 @@
                 <div class="main">
                     <a class="pure-button pure-button-primary button-xlarge" href="javascript:
             (function(){
-            var head = document.getElementsByTagName('head')[0];
-            var script = document.createElement('script');
-            script.src = 'https://seethroughtrees.github.io/smartling-tags-checker/bundle.js';
-            script.async = true;
-            head.appendChild(script);
-            })();
+            if (!document.getElementById('stc-obj')) {
+              var head = document.getElementsByTagName('head')[0];
+              var script = document.createElement('script');
+              script.src = 'https://seethroughtrees.github.io/smartling-tags-checker/bundle.js';
+              script.async = true;
+              head.appendChild(script);
+            }})();
             ">Smartling Tags Checker</a>
                 </div>
                 <br>

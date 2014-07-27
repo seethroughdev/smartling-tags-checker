@@ -122,6 +122,8 @@ gulp.task('watch', [
 });
 
 gulp.task('deploy', [ 'build' ], function() {
+  env = 'production';
+
   gulp.src(path.dist.root + '**/*')
     .pipe(deploy(path.gh.root));
 });

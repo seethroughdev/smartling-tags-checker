@@ -2,6 +2,7 @@
 
 var $ = require('domtastic/bundle/full/domtastic');
 
+
 function hideStyles($el) {
   var style = $el.attr('style');
 
