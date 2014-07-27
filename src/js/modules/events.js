@@ -44,6 +44,7 @@ module.exports = function() {
         $highlights.each(function(e) {
           hideStyles($(e));
         });
+
         $('[data-stc="' + $target.attr('id') + '"]').each(function(e) {
           showStyles($(e));
         });

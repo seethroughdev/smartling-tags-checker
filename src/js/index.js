@@ -1,7 +1,7 @@
 var events  = require('./modules/events')
 ,   obj     = require('./modules/obj')
+,   tags    = require('./modules/tag-names')
 ,   content = require('./modules/content');
 
-content();
-obj();
+obj(content(tags), tags);
 events();

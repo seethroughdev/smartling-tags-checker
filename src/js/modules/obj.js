@@ -2,32 +2,78 @@
 
 var $           = require('domtastic/bundle/full/domtastic')
 ,   _           = require('lodash')
-,   objTemplate = require('./template')
-,   getNodes    = require('./content')
-,   Tags        = require('./tag-names');
+,   template    = require('./template');
 
-var cssLoc = 'https://seethroughtrees.github.io/smartling-tags-checker/index.css';
+var cssLoc = 'https://seethroughtrees.github.io/';
+    cssLoc += 'smartling-tags-checker/index.css';
 
 
-function addStyle() {
+function appendItems(container, items) {
+  if (_.isArray(items)) {
+    _.forEach(items, function(item) {
+      container.append(item);
+    });
+  } else if (_.isObject(items)) {
+    container.append(items);
+  }
+}
+
+function addStyle(css) {
   var $link = $('<link>');
 
   $link.attr({
     rel: 'stylesheet',
-    href: cssLoc,
+    href: css,
     type: 'text/css'
   });
 
-  $('head').append($link);
+  appendItems($('head'), $link);
 }
 
 
-function getTagLink(el) {
+function getTagLink(el, collection) {
   var tagType = $(el).attr('data-stc');
-  return _.find(Tags, { name: tagType }).link;
+  return _.find(collection, { name: tagType }).link;
 }
 
-function addContainer() {
+function buildLi(el, tagType, fullTags) {
+  var $li     = $('<li>'),
+      $tag    = $('<span>'),
+      $link   = $('<a>'),
+      $swatch = $('<span>');
+
+  $tag.attr({
+      id: tagType
+    })
+    .addClass('tag-link')
+    .text(tagType);
+
+  $link.attr({
+      href: getTagLink(el, fullTags),
+      target: '_blank',
+      id: 'stc-link'
+    }).text('a');
+
+  $swatch
+    .addClass('swatch-link')
+    .css({
+      background: el.bgColor
+    });
+
+  $li.addClass('is-active');
+
+  appendItems($li, [ $swatch, $tag ]);
+
+  if ($link.attr('href').length) {
+    $li.append($link);
+  }
+
+  return $li;
+
+}
+
+
+function addContainer(currentTags, fullTags) {
   var $body      = $('body'),
       $container = $('<div>'),
       $close     = $('<a>'),
@@ -35,66 +81,32 @@ function addContainer() {
 
   $container
     .attr('id', 'stc-obj')
-    .html(objTemplate);
+    .html(template);
 
-  _.forEach(getNodes(), function(el) {
-    var $li     = $('<li>'),
-        $tag    = $('<span>'),
-        $link   = $('<a>'),
-        $swatch = $('<span>'),
-        tagType = $(el).attr('data-stc');
-
-    $tag.attr({
-        id: tagType
-      })
-      .addClass('tag-link')
-      .text(tagType);
-
-    $link.attr({
-        href: getTagLink(el),
-        target: '_blank',
-        id: 'stc-link'
-      }).text('a');
-
-    $swatch
-      .addClass('swatch-link')
-      .css({
-        background: el.bgColor
-      });
-
-    $li.addClass('is-active')
-      .append($swatch)
-      .append($tag);
-
-    if ($link.attr('href').length) {
-      $li.append($link);
-    }
-
-    $ul.append($li);
+  _.forEach(currentTags, function(el) {
+    return $ul.append(buildLi(el, $(el).attr('data-stc'), fullTags));
   });
 
-    $close
-      .attr({
-        id: 'stc-close',
-        href: '#'
-      })
-      .text('- close -');
+  $close
+    .attr({
+      id: 'stc-close',
+      href: '#'
+    })
+    .text('- close -');
 
-    $container
-      .append($ul)
-      .append($close);
-    $body.append($container);
+  appendItems($container, [ $ul, $close ]);
+  appendItems($body, $container);
 
-    setTimeout(function() {
-      $container.addClass('is-active');
-    }, 500);
+  setTimeout(function() {
+    return $container.addClass('is-active');
+  }, 500);
 
 }
 
 
-function init() {
-  addContainer();
-  addStyle();
+function init(currentTags, fullTags) {
+  addContainer(currentTags, fullTags);
+  addStyle(cssLoc);
 }
 
 

@@ -2,7 +2,6 @@
 
 var $      = require('domtastic/bundle/full/domtastic')
 ,   _      = require('lodash')
-,   Tags   = require('./tag-names')
 ,   Colors = require('./colors');
 
 
@@ -35,8 +34,8 @@ var setColors = function(e) {
 
 // return all tagged nodes on the page
 
-module.exports = function() {
-  return _.chain(Tags)
+module.exports = function(tags) {
+  return _.chain(tags)
           .map(getNames)
           .map(getNodes)
           .filter(elExists)
