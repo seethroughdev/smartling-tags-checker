@@ -52,6 +52,7 @@ function addContainer() {
 
     $link.attr({
         href: getTagLink(el),
+        target: '_blank',
         id: 'stc-link'
       }).text('a');
 

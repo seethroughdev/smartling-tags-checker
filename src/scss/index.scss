@@ -1,9 +1,9 @@
 $liSize: 60px;
 $bg: hsla(0, 11%, 21%, 1);
 $primary: #95d274;
-$secondary: #b7b7b7;
-$tertiary: #fbfbfb;
-$titleHeight: 18px;
+$black: #444;
+$grey: #d7d7d7;
+$swatchSize: 30px;
 
 @font-face {
   font-family: 'icons';
@@ -20,7 +20,7 @@ $titleHeight: 18px;
   top: 0;
   right: 0;
   background: #fff;
-  color: #333;
+  color: $black;
   font-family: 'helvetica nueue', helvetica, arial, sans-serif;
   transform: translateX(100%) translateZ(0);
   transition: all 500ms ease-out;
@@ -52,7 +52,7 @@ $titleHeight: 18px;
   }
 
   a {
-    color: #333;
+    color: $black;
     text-decoration: none;
     &:hover {
       color: $primary;
@@ -61,15 +61,16 @@ $titleHeight: 18px;
 
   .tag-link {
     cursor: pointer;
-    color: #333;
+    color: $black;
     user-select: none;
+    font-weight: bold;
   }
 
   .swatch-link {
     position: relative;
     top: 8px;
-    width: 30px;
-    height: 30px;
+    width: $swatchSize;
+    height: $swatchSize;
     display: inline-block;
     margin: 0 10px 0 0;
   }
@@ -80,7 +81,7 @@ $titleHeight: 18px;
 
   #stc-link {
     font-family: 'icons';
-    color: #d7d7d7;
+    color: $grey;
     margin-left: 10px;
     &:hover {
       color: $primary;
@@ -103,9 +104,4 @@ $titleHeight: 18px;
     box-sizing: border-box;
   }
 
-
-}
-
-[data-stc].is-active {
-  box-shadow: 0 0 1000px rgba(0,0,0,.1);
 }
