@@ -24,36 +24,44 @@ function showStyles($el) {
 module.exports = function() {
   $('body').on('click', '#stc-obj', function(e) {
 
-    var $target = $(e.target),
+    var $target    = $(e.target),
+        $tagLinks  = $('.tag-link'),
+        $highlights = $('[data-stc'),
         $parentLis = $('#stc-obj').find('li');
 
     if ($target.hasClass('tag-link') && $parentLis.length > 1) {
+      e.preventDefault();
 
       if (!$target.hasClass('is-searching')) {
-        $('.tag-link').removeClass('is-searching');
+
+        $tagLinks.removeClass('is-searching');
         $target.addClass('is-searching');
         $parentLis.removeClass('is-active');
         $target.parent().addClass('is-active');
 
-        $('[data-stc]').each(function(e) {
+        $highlights.each(function(e) {
           hideStyles($(e));
         });
         $('[data-stc="' + $target.attr('id') + '"]').each(function(e) {
           showStyles($(e));
         });
+
       } else {
+
         $target.removeClass('is-searching');
         $parentLis.addClass('is-active');
-        $('[data-stc]').each(function(e) {
+
+        $highlights.each(function(e) {
           showStyles($(e));
         });
+
       }
 
     }
 
     if ($target.attr('id') === 'stc-close') {
       e.preventDefault();
-      $('[data-stc]')
+      $highlights
         .removeAttr('style')
         .removeAttr('data-stc');
       $('#stc-obj').removeClass('is-active');
