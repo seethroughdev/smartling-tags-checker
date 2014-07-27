@@ -26,6 +26,7 @@ module.exports = function() {
   $('body').on('click', '#stc-obj', function(e) {
 
     var $target    = $(e.target),
+        $stcObj    = $('#stc-obj'),
         $tagLinks  = $('.tag-link'),
         $highlights = $('[data-stc'),
         $parentLis = $('#stc-obj').find('li');
@@ -65,7 +66,12 @@ module.exports = function() {
       $highlights
         .removeAttr('style')
         .removeAttr('data-stc');
-      $('#stc-obj').removeClass('is-active');
+      $stcObj.removeClass('is-active');
+
+      setTimeout(function() {
+        $stcObj.remove();
+      }, 500);
+
     }
 
   });
