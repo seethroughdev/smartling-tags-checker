@@ -23,6 +23,7 @@ $swatchSize: 30px;
   color: $black;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   transform: translateX(100%) translateZ(0);
+  z-index: 1000;
 
   #stc-heading {
     display: block;
