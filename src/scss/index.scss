@@ -12,7 +12,6 @@ $swatchSize: 30px;
   font-style: normal;
 }
 
-
 #stc-obj {
   box-sizing: border-box;
   position: absolute;
@@ -24,7 +23,7 @@ $swatchSize: 30px;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 16px;
   transform: translateX(100%) translateZ(0);
-  z-index: 1000;
+  z-index: 10000;
 
   #stc-heading {
     display: block;
@@ -43,9 +42,9 @@ $swatchSize: 30px;
 
   li {
     list-style-type: none;
-    margin-bottom: 15px;
     text-transform: lowercase;
     opacity: .2;
+    margin-bottom: 15px;
     transition: opacity 300ms ease-out;
     &:hover {
       opacity: 1;
