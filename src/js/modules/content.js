@@ -25,7 +25,7 @@ var addColors = function(e, i) {
 var setColors = function(e) {
   $(e).css({
     background: e.bgColor,
-    color: '#000'
+    color: '#000 !important'
   });
 
   return e;
