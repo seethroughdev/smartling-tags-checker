@@ -10,11 +10,11 @@ module.exports = [
     link: 'http://www.smartling.com/blog/2012/05/10/localize-content-with-the-sl_swap-tag/'
   },
   {
-    name: 'sl_hide',
+    name: 'SL_hide',
     link: 'http://support.smartling.com/hc/en-us/articles/200703627-How-to-Hide-Content'
   },
   {
-    name: 'sl_whiteout',
+    name: 'SL_whiteout',
     link: 'http://support.smartling.com/hc/en-us/articles/200989376-How-to-Whiteout-Content'
   },
   {
@@ -34,19 +34,19 @@ module.exports = [
     link: 'http://support.smartling.com/hc/en-us/articles/201156393-How-to-Sort-Translated-Content'
   },
   {
-    name: 'sl_split',
+    name: 'SL_split',
     link: 'http://support.smartling.com/hc/en-us/articles/201126696-Forcing-Alternate-Content-Parsing-Using-SL-split'
   },
   {
-    name: 'sl_translate',
+    name: 'SL_translate',
     link: 'http://support.smartling.com/hc/en-us/articles/201059107-How-to-Process-JSON-for-Translation'
   },
   {
-    name: 'sl_all',
+    name: 'SL_all',
     link: 'http://support.smartling.com/hc/en-us/articles/201059107-How-to-Process-JSON-for-Translation'
   },
   {
-    name: 'sl_none',
+    name: 'SL_none',
     link: 'http://support.smartling.com/hc/en-us/articles/201059107-How-to-Process-JSON-for-Translation'
   }
 ];
